@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<head>
+<body>
+    <div id="root"></div>
+</body>
+<script src="https://unpkg.com/react@17.0.2/umd/react.production.min.js">
+</script>
+<script src="https://unpkg.com/react-dom@17.0.2/umd/react-dom.production.min.js"></script>
+<script>
+    const root = document.getElementById("root");
+    const btn = React.createElement("button", {onClick: () => console.log("im clicked"), style:{backgroundColor:"tomato"}}, "Click me");             // 버튼은 클릭하면 로그에 im clicked 라고 찍힌다
+    // btn에 이벤트를 주는 방법이다 이름은 "button" 이벤트 내용 onClick 클릭을 하면 콘솔 로그에 "im Clicked" 라고 찍어라, 스타일 버튼에 배경색을 "tomato"로 하여라 html에 띄울 글씨는 click me 라고 하여라
+    const h3 = React.createElement("h3",{onMouseEnter: () => console.log("mouse enter")},"Hello I'm a span");                                        // 마우스를 Hello I'm a span 위에 mouse enter하면 로그에 mouse enter이라고 찍힌다
+    // h3 에 이벤트를 주는 방법이다 먼저 이름은 지정하고 "h3" 이벤트 내용 "마우스를 엔터하면" => "로그에 찍어라" "내용" 마지막에 html 띄울 글씨
+    const container = React.createElement("div", null, [h3, btn]);
+    ReactDOM.render(container, root)           //render = React element 를 가지고 html 에 배치한다 = 사용자에게 보여준다
+    // html에 컨테이너 즉 16번째 줄에 있는 div = h3,btn 을 html 에 출력한다
+</script>
+</html>

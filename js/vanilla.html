@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<head>
+<body>
+    <span>Total clicks: 0</span>             <!--0부터 시작-->
+    <button id="btn">Click me</button>      <!--클릭버튼-->
+</body>
+<script>
+    let counter = 0;                        // 카운트 시작 0부터
+    const button = document.getElementById("btn"); //html button 가져오기
+    const span = document.querySelector("span"); //html span 가져오기
+    function handleClick(){                //클릭하면
+        console.log("i have been clicked");
+        counter = counter+1;                //카운터를 클릭하면  카운터에 +1을 하라
+        span.innerTest = 'Total clicks: ${counter}';
+    }
+    button.addEventListener("click", handleClick);
+</script>
+</html>
